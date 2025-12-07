@@ -449,6 +449,7 @@
         /* ---------- Panel opener (as before) ---------- */
         window.openPanel = function (type) {
             const lang = document.getElementById("lang-switch").value;
+            const pdfFile = lang === "es" ? "pdf/RS7_OwnerInfo_ES.pdf" : "pdf/RS7_OwnerInfo_EN.pdf";
             const t = LANG[lang];
 
             const panel = document.getElementById("panel");
@@ -457,7 +458,7 @@
             if (type === "pdf") {
                 html = `
             <h2 style="color:var(--eu-yellow);margin-top:0">${t.pdf_title}</h2>
-            <iframe class="pdf-viewer" src="pdf/RS7_OwnerInfo.pdf"></iframe>
+            <iframe class="pdf-viewer" src="${pdfFile}"></iframe>
         `;
             }
 
