@@ -1,0 +1,77 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LaFly RS7 — Owner Portal</title>
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <link rel="stylesheet" href="css/media.css" type="text/css">
+</head>
+
+<body>
+    <header>
+        <div class="left">
+            <img class="logo" src="logo/logo_de_LAFLY.png" alt="LaFly logo">
+            <div class="title">LaFly RS7 — Owner Portal</div>
+        </div>
+        <div class="right" style="display:flex;align-items:center;gap:12px;">
+            <select id="lang-switch"
+                style="padding:6px 8px;border-radius:6px;background:#09204f;color:white;border:1px solid var(--eu-yellow);font-weight:600;">
+                <option value="en">EN</option>
+                <option value="es">ES</option>
+            </select>
+            <img class="eu-flag" src="logo/flag.jpg" alt="EU flag">
+        </div>
+    </header>
+
+    <main class="page-wrapper">
+        <div class="cards" id="cards">
+            <div class="card" data-key="pdf">
+                <div class="preview-wrapper">
+                    <img src="images/profil.jpg" alt="PDF preview">
+                </div>
+                <div class="card-title">Full Owner PDF</div>
+                <div class="card-desc">Open the merged owner dossier (PDF) with Revolut proof and photos.</div>
+            </div>
+
+            <div class="card" data-key="insurance">
+                <div class="preview-wrapper">
+                    <img src="images/accident.jpg" alt="Insurance preview">
+                </div>
+                <div class="card-title">Insurance Policy</div>
+                <div class="card-desc">Official insurance (add when ready).</div>
+            </div>
+
+            <div class="card" data-key="gallery">
+                <div class="preview-wrapper">
+                    <img src="images/gallery.jpg" alt="Gallery preview">
+                </div>
+                <div class="card-title">Scooter Photos</div>
+                <div class="card-desc">Photos of the LaFly RS7 — exterior, deck, serial details.</div>
+            </div>
+
+            <div class="card" data-key="specs">
+                <div class="preview-wrapper">
+                    <img src="images/insurance.jpg" alt="Specs preview">
+                </div>
+                <div class="card-title">Technical Specs</div>
+                <div class="card-desc">Motors, battery, brakes, suspension, lights and weight.</div>
+            </div>
+        </div>
+
+        <section id="panel" class="detail-panel" aria-live="polite"></section>
+
+        <footer>Version: 2.1 · Generated: 2023-12-05 · LaFly RS7 Owner Portal</footer>
+    </main>
+
+    <div class="bottom-menu" role="navigation">
+        <button id="btn-home">Home</button>
+        <button id="btn-pdf">PDF</button>
+        <button id="btn-specs">Specs</button>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>

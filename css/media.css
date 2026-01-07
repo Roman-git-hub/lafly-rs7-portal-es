@@ -1,0 +1,15 @@
+   /* responsive tweaks */
+   @media (max-width:720px) {
+       .card .preview-wrapper {
+           aspect-ratio: 4 / 3;
+           /* make a bit more rectangular on small screens if you prefer */
+       }
+
+       header img.logo {
+           width: 110px;
+       }
+
+       header .title {
+           display: none;
+       }
+   }

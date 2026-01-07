@@ -1,0 +1,230 @@
+  :root {
+        --eu-blue: #0b1e63;
+        --eu-dark: #071437;
+        --eu-yellow: #ffd22e;
+        --eu-light: #b5c6ff;
+        --card-bg: #0d1a4f;
+        --panel-bg: #0d1a4f;
+    }
+
+    /* полностью блокируем выделение */
+    .secure-on * {
+        -webkit-user-select: none !important;
+        user-select: none !important;
+    }
+
+    /* фикс от сохранения изображений */
+    img {
+        -webkit-user-drag: none;
+        --user-drag: none;
+    }
+
+    /* предотвращаем копирование */
+    ::selection {
+        background: transparent;
+    }
+
+    html,
+    body {
+        height: 100%;
+    }
+
+    body {
+        margin: 0;
+        background: var(--eu-dark);
+        color: #e9ebff;
+        font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
+        scroll-behavior: smooth;
+    }
+
+    /* secure mode */
+    body.secure-on {
+        -webkit-user-select: none;
+        user-select: none;
+    }
+
+    /* FIXED TOP MENU */
+    header {
+        width: 98%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 9999;
+        background: linear-gradient(90deg, var(--eu-blue), #09204f);
+        padding: 12px 16px;
+        padding-right: 16px;
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.45);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 3px solid var(--eu-yellow);
+    }
+
+    header .left {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+
+    header img.logo {
+        width: 140px;
+        height: auto;
+        display: block;
+    }
+
+    header img.eu-flag {
+        width: 44px;
+        height: auto;
+        border-radius: 6px;
+    }
+
+    header .title {
+        color: var(--eu-light);
+        font-weight: 700;
+        font-size: 30px;
+        padding-left: 50px;
+    }
+
+    .page-wrapper {
+        padding-top: 92px;
+        padding-bottom: 84px;
+        width: 94%;
+        max-width: 1100px;
+        margin: 0 auto;
+    }
+
+    .cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 18px;
+        margin: 18px 0 28px 0;
+    }
+
+    .card {
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01));
+        border: 1px solid rgba(255, 210, 46, 0.08);
+        border-radius: 12px;
+        padding: 14px;
+        cursor: pointer;
+        transition: transform .28s cubic-bezier(.2, .9, .3, 1), box-shadow .28s;
+        box-shadow: 0 6px 18px rgba(2, 6, 23, 0.45);
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        opacity: 0;
+        transform: translateY(28px);
+        overflow: hidden;
+    }
+
+    .card.visible {
+        opacity: 1;
+        transform: none;
+    }
+
+    .card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 18px 36px rgba(2, 6, 23, 0.6);
+    }
+
+    /* NEW: preview-wrapper ensures full-cover images and fixed aspect-ratio (square) */
+    .preview-wrapper {
+        width: 100%;
+        aspect-ratio: 1 / 1;
+        /* square. Change to 16/9 or other if you prefer */
+        overflow: hidden;
+        border-radius: 8px;
+        flex: 0 0 auto;
+        /* keep image area fixed size in card layout */
+        background: linear-gradient(180deg, rgba(0, 0, 0, 0.08), rgba(0, 0, 0, 0.03));
+    }
+
+    /* ensure images actually cover the preview wrapper */
+    .preview-wrapper img {
+        width: 100%;
+        height: 100%;
+        /* <-- вот эта строка исправляет заполнение */
+        object-position: center;
+        display: block;
+        -webkit-user-drag: none;
+        --user-drag: none;
+        -webkit-touch-callout: none;
+    }
+
+    .card-title {
+        color: var(--eu-yellow);
+        font-weight: 700;
+        font-size: 18px;
+    }
+
+    .card-desc {
+        color: #c9d3ff;
+        font-size: 13px;
+    }
+
+    .detail-panel {
+        background: var(--card-bg);
+        border-radius: 12px;
+        padding: 18px;
+        border: 1px solid rgba(255, 210, 46, 0.2);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.55);
+        display: none;
+    }
+
+    iframe.pdf-viewer {
+        width: 100%;
+        height: 100vh;
+        border-radius: 10px;
+        border: 0;
+    }
+
+    footer {
+        text-align: center;
+        color: #b6c6ff;
+        margin-top: 22px;
+        font-size: 13px;
+    }
+
+    /* bottom menu */
+    .bottom-menu {
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 9998;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        padding: 10px 12px;
+        background: linear-gradient(180deg, var(--eu-blue), #041039);
+        border-top: 3px solid var(--eu-yellow);
+        box-shadow: 0 -8px 26px rgba(0, 0, 0, 0.5);
+    }
+
+    .bottom-menu button {
+        background: transparent;
+        border: none;
+        color: #fff;
+        font-weight: 600;
+        padding: 8px 12px;
+        border-radius: 10px;
+    }
+
+    .bottom-menu button:active {
+        transform: scale(.98);
+    }
+
+    body {
+        background: var(--eu-dark) !important;
+    }
+
+    .page-wrapper {
+        background: var(--eu-dark) !important;
+    }
+
+    .card {
+        background: var(--card-bg) !important;
+    }
+
+    .detail-panel {
+        background: var(--card-bg) !important;
+    }
