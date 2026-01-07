@@ -13,7 +13,7 @@ const LANG = {
 
         specs_panel_title: "Technical Specifications — LaFly RS7",
         t_motors: "Motors:",
-        t_motors_val: "Dual hub motors, 1000W × 2",
+        t_motors_val: "Dual hub motors, 500W",
         t_load: "Maximum load:",
         t_load_val: "250 kg",
         t_battery: "Battery:",
@@ -25,7 +25,7 @@ const LANG = {
         t_suspension: "Suspension:",
         t_suspension_val: "Oil front + rear",
         t_speed: "Max speed:",
-        t_speed_val: "~30 km/h",
+        t_speed_val: "~25 km/h",
         t_weight: "Weight:",
         t_weight_val: "~37 kg",
         t_lighting: "Lighting:",
@@ -45,7 +45,7 @@ const LANG = {
 
         specs_panel_title: "Especificaciones Técnicas — LaFly RS7",
         t_motors: "Motores:",
-        t_motors_val: "Motores duales de buje, 1000W × 2",
+        t_motors_val: "Motores duales de buje, 500W",
         t_load: "Carga máxima:",
         t_load_val: "250 kg",
         t_battery: "Batería:",
@@ -57,7 +57,7 @@ const LANG = {
         t_suspension: "Suspensión:",
         t_suspension_val: "Aceite delantera + trasera",
         t_speed: "Velocidad máx:",
-        t_speed_val: "~30 km/h",
+        t_speed_val: "~25 km/h",
         t_weight: "Peso:",
         t_weight_val: "~37 kg",
         t_lighting: "Iluminación:",
@@ -260,4 +260,5 @@ function createAntiScreenshotOverlay() {
 }
 
 /* start in secure mode? you can switch to false while testing */
+
 secureMode(true);
